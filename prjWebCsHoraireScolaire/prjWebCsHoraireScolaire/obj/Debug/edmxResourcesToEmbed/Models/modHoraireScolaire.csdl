@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HoraireScolaireModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrateur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Sexe" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="mdp" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Cour">
+    <Key>
+      <PropertyRef Name="CoursID" />
+    </Key>
+    <Property Name="CoursID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titre" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Etudiant">
+    <Key>
+      <PropertyRef Name="EtudiantID" />
+    </Key>
+    <Property Name="EtudiantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Mdp" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Notes" Relationship="Self.FK_Etudiant_Notes" FromRole="Etudiants" ToRole="Notes" />
+  </EntityType>
+  <EntityType Name="Horaire">
+    <Key>
+      <PropertyRef Name="HoraireID" />
+    </Key>
+    <Property Name="HoraireID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="HeureDebut" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="HeureFin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Professeur" Type="Int32" />
+    <NavigationProperty Name="Professeur1" Relationship="Self.FK_Horaire_Prof" FromRole="Horaires" ToRole="Professeurs" />
+  </EntityType>
+  <EntityType Name="Note">
+    <Key>
+      <PropertyRef Name="NotesID" />
+    </Key>
+    <Property Name="NotesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Etudiant" Type="Int32" />
+    <Property Name="Notes" Type="Double" />
+    <Property Name="Cours" Type="Int32" />
+    <NavigationProperty Name="Etudiant1" Relationship="Self.FK_Etudiant_Notes" FromRole="Notes" ToRole="Etudiants" />
+  </EntityType>
+  <EntityType Name="Professeur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Sexe" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="mdp" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Horaires" Relationship="Self.FK_Horaire_Prof" FromRole="Professeurs" ToRole="Horaires" />
+  </EntityType>
+  <Association Name="FK_Etudiant_Notes">
+    <End Role="Etudiants" Type="Self.Etudiant" Multiplicity="0..1" />
+    <End Role="Notes" Type="Self.Note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etudiants">
+        <PropertyRef Name="EtudiantID" />
+      </Principal>
+      <Dependent Role="Notes">
+        <PropertyRef Name="Etudiant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Horaire_Prof">
+    <End Role="Professeurs" Type="Self.Professeur" Multiplicity="0..1" />
+    <End Role="Horaires" Type="Self.Horaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professeurs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Horaires">
+        <PropertyRef Name="Professeur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HoraireScolaireEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrateurs" EntityType="Self.Administrateur" />
+    <EntitySet Name="Cours" EntityType="Self.Cour" />
+    <EntitySet Name="Etudiants" EntityType="Self.Etudiant" />
+    <EntitySet Name="Horaires" EntityType="Self.Horaire" />
+    <EntitySet Name="Notes" EntityType="Self.Note" />
+    <EntitySet Name="Professeurs" EntityType="Self.Professeur" />
+    <AssociationSet Name="FK_Etudiant_Notes" Association="Self.FK_Etudiant_Notes">
+      <End Role="Etudiants" EntitySet="Etudiants" />
+      <End Role="Notes" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Horaire_Prof" Association="Self.FK_Horaire_Prof">
+      <End Role="Professeurs" EntitySet="Professeurs" />
+      <End Role="Horaires" EntitySet="Horaires" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

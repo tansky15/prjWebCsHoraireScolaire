@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HoraireScolaireModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Professeur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Sexe" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="mdp" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Horaires" Relationship="HoraireScolaireModel.FK_Horaire_Prof" FromRole="Professeur" ToRole="Horaire" />
+  </EntityType>
+  <EntityContainer Name="HoraireScolaireEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Professeurs" EntityType="Self.Professeur" />
+    <EntitySet Name="Horaires" EntityType="HoraireScolaireModel.Horaire" />
+    <AssociationSet Name="FK_Horaire_Prof" Association="HoraireScolaireModel.FK_Horaire_Prof">
+      <End Role="Professeur" EntitySet="Professeurs" />
+      <End Role="Horaire" EntitySet="Horaires" />
+    </AssociationSet>
+    <FunctionImport Name="SP_SelHoraireParProf" ReturnType="Collection(HoraireScolaireModel.SP_SelHoraireParProf_Result)">
+      <Parameter Name="parmProID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Horaire">
+    <Key>
+      <PropertyRef Name="HoraireID" />
+    </Key>
+    <Property Name="HoraireID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="HeureDebut" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="HeureFin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Professeur" Type="Int32" />
+    <NavigationProperty Name="Professeur1" Relationship="HoraireScolaireModel.FK_Horaire_Prof" FromRole="Horaire" ToRole="Professeur" />
+  </EntityType>
+  <Association Name="FK_Horaire_Prof">
+    <End Type="HoraireScolaireModel.Professeur" Role="Professeur" Multiplicity="0..1" />
+    <End Type="HoraireScolaireModel.Horaire" Role="Horaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professeur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Horaire">
+        <PropertyRef Name="Professeur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_SelHoraireParProf_Result">
+    <Property Type="DateTime" Name="DateCours" Nullable="true" />
+    <Property Type="String" Name="HeureDebut" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="HeureFin" Nullable="true" MaxLength="10" />
+  </ComplexType>
+</Schema>

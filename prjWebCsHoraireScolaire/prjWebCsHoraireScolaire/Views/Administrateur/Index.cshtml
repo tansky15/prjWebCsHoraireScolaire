@@ -1,0 +1,42 @@
+﻿@model prjWebCsHoraireScolaire.Models.Entities.Admin
+@{
+    ViewBag.Title = "Connection";
+}
+
+<div class="card-body" style="margin-top: 150px; margin-bottom: 150px">
+
+    <h2 class="mb-2 text-center">Connexion</h2>
+    <p class="text-center">
+        Connecter a votre compte Administrateur
+    </p>
+
+    <center>
+        @using (Html.BeginForm("AutherizeAdmin", "Administrateur", FormMethod.Post))
+        {<div class="row">
+                <div class="col-lg-12">
+
+                    <div class="alert" role="alert">
+                        @Html.DisplayFor(model => model.LoginErrorMessage)
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email)
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        <small id="helpEmail" class="form-text text-muted">@Html.ValidationMessageFor(model => model.Email)</small>
+                    </div>
+
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.mdp)
+                        @Html.EditorFor(model => model.mdp, new { htmlAttributes = new { @class = "form-control" } })
+                        <small id="helpEmail" class="form-text text-muted">@Html.ValidationMessageFor(model => model.mdp)</small>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <input type="submit" class="btn btn-dark" value="Je me connecte" />
+            </div>
+        }
+    </center>
+</div>

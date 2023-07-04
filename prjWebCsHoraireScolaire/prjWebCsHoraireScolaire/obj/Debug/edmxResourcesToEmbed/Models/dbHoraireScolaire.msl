@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HoraireScolaireModelStoreContainer" CdmEntityContainer="HoraireScolaireEntities">
+    <EntitySetMapping Name="Professeurs">
+      <EntityTypeMapping TypeName="HoraireScolaireModel.Professeur">
+        <MappingFragment StoreEntitySet="Professeurs">
+          <ScalarProperty Name="mdp" ColumnName="mdp" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horaires">
+      <EntityTypeMapping TypeName="HoraireScolaireModel.Horaire">
+        <MappingFragment StoreEntitySet="Horaires">
+          <ScalarProperty Name="Professeur" ColumnName="Professeur" />
+          <ScalarProperty Name="HeureFin" ColumnName="HeureFin" />
+          <ScalarProperty Name="HeureDebut" ColumnName="HeureDebut" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="HoraireID" ColumnName="HoraireID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelHoraireParProf" FunctionName="HoraireScolaireModel.Store.SP_SelHoraireParProf">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HoraireScolaireModel.SP_SelHoraireParProf_Result">
+          <ScalarProperty Name="DateCours" ColumnName="DateCours" />
+          <ScalarProperty Name="HeureDebut" ColumnName="HeureDebut" />
+          <ScalarProperty Name="HeureFin" ColumnName="HeureFin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

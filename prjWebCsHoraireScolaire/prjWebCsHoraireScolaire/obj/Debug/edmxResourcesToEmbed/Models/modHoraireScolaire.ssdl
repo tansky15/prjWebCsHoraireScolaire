@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HoraireScolaireModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrateurs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nchar" MaxLength="255" />
+    <Property Name="Prenom" Type="nchar" MaxLength="255" />
+    <Property Name="Sexe" Type="nchar" MaxLength="1" />
+    <Property Name="Email" Type="nchar" MaxLength="255" />
+    <Property Name="mdp" Type="nchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="CoursID" />
+    </Key>
+    <Property Name="CoursID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titre" Type="nchar" MaxLength="255" />
+    <Property Name="Description" Type="nchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Etudiants">
+    <Key>
+      <PropertyRef Name="EtudiantID" />
+    </Key>
+    <Property Name="EtudiantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nchar" MaxLength="255" />
+    <Property Name="Prenom" Type="nchar" MaxLength="255" />
+    <Property Name="Email" Type="nchar" MaxLength="255" />
+    <Property Name="Mdp" Type="nchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Horaires">
+    <Key>
+      <PropertyRef Name="HoraireID" />
+    </Key>
+    <Property Name="HoraireID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="HeureDebut" Type="nchar" MaxLength="10" />
+    <Property Name="HeureFin" Type="nchar" MaxLength="10" />
+    <Property Name="Professeur" Type="int" />
+  </EntityType>
+  <EntityType Name="Notes">
+    <Key>
+      <PropertyRef Name="NotesID" />
+    </Key>
+    <Property Name="NotesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Etudiant" Type="int" />
+    <Property Name="Notes" Type="float" />
+    <Property Name="Cours" Type="int" />
+  </EntityType>
+  <EntityType Name="Professeurs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nchar" MaxLength="255" />
+    <Property Name="Prenom" Type="nchar" MaxLength="255" />
+    <Property Name="Sexe" Type="nchar" MaxLength="1" />
+    <Property Name="Email" Type="nchar" MaxLength="255" />
+    <Property Name="mdp" Type="nchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_Etudiant_Notes">
+    <End Role="Etudiants" Type="Self.Etudiants" Multiplicity="0..1" />
+    <End Role="Notes" Type="Self.Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etudiants">
+        <PropertyRef Name="EtudiantID" />
+      </Principal>
+      <Dependent Role="Notes">
+        <PropertyRef Name="Etudiant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Horaire_Prof">
+    <End Role="Professeurs" Type="Self.Professeurs" Multiplicity="0..1" />
+    <End Role="Horaires" Type="Self.Horaires" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professeurs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Horaires">
+        <PropertyRef Name="Professeur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HoraireScolaireModelStoreContainer">
+    <EntitySet Name="Administrateurs" EntityType="Self.Administrateurs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cours" EntityType="Self.Cours" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Etudiants" EntityType="Self.Etudiants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Horaires" EntityType="Self.Horaires" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Professeurs" EntityType="Self.Professeurs" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Etudiant_Notes" Association="Self.FK_Etudiant_Notes">
+      <End Role="Etudiants" EntitySet="Etudiants" />
+      <End Role="Notes" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Horaire_Prof" Association="Self.FK_Horaire_Prof">
+      <End Role="Professeurs" EntitySet="Professeurs" />
+      <End Role="Horaires" EntitySet="Horaires" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

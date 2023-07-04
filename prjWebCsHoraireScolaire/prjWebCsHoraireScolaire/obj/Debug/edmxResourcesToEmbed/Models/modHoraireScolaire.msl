@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HoraireScolaireModelStoreContainer" CdmEntityContainer="HoraireScolaireEntities">
+    <EntitySetMapping Name="Administrateurs">
+      <EntityTypeMapping TypeName="HoraireScolaireModel.Administrateur">
+        <MappingFragment StoreEntitySet="Administrateurs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="mdp" ColumnName="mdp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cours">
+      <EntityTypeMapping TypeName="HoraireScolaireModel.Cour">
+        <MappingFragment StoreEntitySet="Cours">
+          <ScalarProperty Name="CoursID" ColumnName="CoursID" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Etudiants">
+      <EntityTypeMapping TypeName="HoraireScolaireModel.Etudiant">
+        <MappingFragment StoreEntitySet="Etudiants">
+          <ScalarProperty Name="EtudiantID" ColumnName="EtudiantID" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mdp" ColumnName="Mdp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Horaires">
+      <EntityTypeMapping TypeName="HoraireScolaireModel.Horaire">
+        <MappingFragment StoreEntitySet="Horaires">
+          <ScalarProperty Name="HoraireID" ColumnName="HoraireID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="HeureDebut" ColumnName="HeureDebut" />
+          <ScalarProperty Name="HeureFin" ColumnName="HeureFin" />
+          <ScalarProperty Name="Professeur" ColumnName="Professeur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notes">
+      <EntityTypeMapping TypeName="HoraireScolaireModel.Note">
+        <MappingFragment StoreEntitySet="Notes">
+          <ScalarProperty Name="NotesID" ColumnName="NotesID" />
+          <ScalarProperty Name="Etudiant" ColumnName="Etudiant" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Cours" ColumnName="Cours" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Professeurs">
+      <EntityTypeMapping TypeName="HoraireScolaireModel.Professeur">
+        <MappingFragment StoreEntitySet="Professeurs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="mdp" ColumnName="mdp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
