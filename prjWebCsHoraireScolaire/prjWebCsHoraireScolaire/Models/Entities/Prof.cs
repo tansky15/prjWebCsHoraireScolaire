@@ -7,6 +7,6 @@ namespace prjWebCsHoraireScolaire.Models.Entities
 {
     public class Prof:Professeur
     {
-        public string LoginErrorMessage { get; set; }
+        public string ErrorMessage { get; set; }
     }
 }

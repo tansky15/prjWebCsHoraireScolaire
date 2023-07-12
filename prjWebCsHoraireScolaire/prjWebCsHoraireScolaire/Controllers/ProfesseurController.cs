@@ -26,7 +26,7 @@ namespace prjWebCsHoraireScolaire.Controllers
                 //On verifie si l'utilisateur existe
                 if (userDetails == null)
                 {
-                    userModel.LoginErrorMessage = "Mauvais Email et/ou mot de passe ";
+                    userModel.ErrorMessage = "Mauvais Email et/ou mot de passe ";
                     return View("Index", userModel);
                 }
                 else

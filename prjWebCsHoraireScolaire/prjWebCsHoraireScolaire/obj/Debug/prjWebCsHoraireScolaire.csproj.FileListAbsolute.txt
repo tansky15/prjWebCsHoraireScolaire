@@ -1,3 +1,4 @@
+C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.csproj.CoreCompileInputs.cache
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\prjWebCsHoraireScolaire.dll.config
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\prjWebCsHoraireScolaire.dll
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\prjWebCsHoraireScolaire.pdb
@@ -51,6 +52,8 @@ C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScol
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\roslyn\VBCSCompiler.exe
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\Antlr3.Runtime.dll
+C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\EntityFramework.dll
+C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\EntityFramework.SqlServer.dll
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\Newtonsoft.Json.dll
@@ -62,6 +65,8 @@ C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScol
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\System.Web.WebPages.dll
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\System.Web.WebPages.Razor.dll
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\WebGrease.dll
+C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\EntityFramework.xml
+C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\EntityFramework.SqlServer.xml
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\System.Web.Helpers.xml
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\System.Web.Mvc.xml
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\System.Web.Optimization.xml
@@ -72,11 +77,7 @@ C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScol
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\Newtonsoft.Json.xml
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\Antlr3.Runtime.pdb
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.csproj.CoreCompileInputs.cache
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.csproj.CopyComplete
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.dll
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.pdb
-C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\EntityFramework.dll
-C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\EntityFramework.SqlServer.dll
-C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\EntityFramework.xml
-C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\EntityFramework.SqlServer.xml
+C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.csproj.AssemblyReference.cache

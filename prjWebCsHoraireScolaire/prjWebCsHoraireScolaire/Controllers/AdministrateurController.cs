@@ -69,5 +69,68 @@ namespace prjWebCsHoraireScolaire.Controllers
             }
 
         }
+        
+        //Gestion des professeurs 
+        [HttpGet]
+        public ActionResult GestionProfs(prjWebCsHoraireScolaire.Models.Professeur modProf)
+        {
+            using(prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            {
+                var liste_des_profs = db.Professeurs.ToList();
+                return View(liste_des_profs);
+            }
+            
+        }
+
+        //[HttpPost]
+        public ActionResult AjouterProfesseur(prjWebCsHoraireScolaire.Models.Entities.Prof modProf)
+        {
+            if(modProf.Nom != null)
+            {
+                using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+                {
+                    Models.Professeur newProf = new Models.Professeur
+                    {
+                        Nom = modProf.Nom,
+                        Prenom = modProf.Prenom,
+                        Sexe = modProf.Sexe,
+                        Email = modProf.Email
+                    };
+
+                    db.Professeurs.Add(newProf);
+                    db.SaveChanges();
+
+                    
+
+                    modProf.ErrorMessage = "Professeur enregistre avec success.";
+                    return View(modProf);
+                }
+            }
+            else
+            {
+                modProf.ErrorMessage = "";
+                return View(modProf);
+            }
+          
+        }
+       
+        public ActionResult EffacerProfesseur()
+        {
+            using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            {
+                if (Url.RequestContext.RouteData.Values["id"] != null)
+                {
+                    int ProfesseurID = Convert.ToInt32(Url.RequestContext.RouteData.Values["id"]);
+
+                    prjWebCsHoraireScolaire.Models.Professeur Professeur = db.Professeurs.First(x => x.Id == ProfesseurID);
+
+                    db.Professeurs.Remove(Professeur);
+                    db.SaveChanges();
+                }
+
+                var liste_des_profs = db.Professeurs.ToList();
+                return View("GestionProfs",liste_des_profs);
+            }
+        }
     }
 }
