@@ -233,6 +233,8 @@
     <Content Include="Views\Administrateur\ListeCours.cshtml" />
     <Content Include="Views\Administrateur\GestionProfs.cshtml" />
     <Content Include="Views\Administrateur\AjouterProfesseur.cshtml" />
+    <Content Include="Views\Administrateur\GestionEtudiant.cshtml" />
+    <Content Include="Views\Administrateur\AjouterEtudiant.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -80,4 +80,3 @@ C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScol
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.csproj.CopyComplete
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.dll
 C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.pdb
-C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.csproj.AssemblyReference.cache

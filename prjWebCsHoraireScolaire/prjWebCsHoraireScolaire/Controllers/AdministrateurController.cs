@@ -82,7 +82,6 @@ namespace prjWebCsHoraireScolaire.Controllers
             
         }
 
-        //[HttpPost]
         public ActionResult AjouterProfesseur(prjWebCsHoraireScolaire.Models.Entities.Prof modProf)
         {
             if(modProf.Nom != null)
@@ -132,5 +131,70 @@ namespace prjWebCsHoraireScolaire.Controllers
                 return View("GestionProfs",liste_des_profs);
             }
         }
+        
+        //Gestion d'Etudiant
+        [HttpGet]
+        public ActionResult GestionEtudiant()
+        {
+            using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            {
+                var liste_des_etudiant = db.Etudiants.ToList();
+                return View(liste_des_etudiant);
+            }
+        }
+
+        public ActionResult EffacerEtudiant()
+        {
+            using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            {
+                if (Url.RequestContext.RouteData.Values["id"] != null)
+                {
+                    try
+                    {
+
+                        int EtudiantID = Convert.ToInt32(Url.RequestContext.RouteData.Values["id"]);
+
+                        prjWebCsHoraireScolaire.Models.Etudiant Etudiant = db.Etudiants.First(x => x.EtudiantID == EtudiantID);
+
+                        db.Etudiants.Remove(Etudiant);
+                        db.SaveChanges();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
+                }
+
+                var liste_des_etudiants = db.Etudiants.ToList();
+                return View("GestionEtudiant", liste_des_etudiants);
+            }
+        }
+
+        public ActionResult AjouterEtudiant(prjWebCsHoraireScolaire.Models.Etudiant modEtudiant)
+        {
+                using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+                {
+
+                        if (modEtudiant.Nom != null)
+                        {
+                            Models.Etudiant newEtudiant = new Models.Etudiant
+                            {
+                                Nom = modEtudiant.Nom,
+                                Prenom = modEtudiant.Prenom,
+                                Email = modEtudiant.Email
+                            };
+
+                            db.Etudiants.Add(newEtudiant);
+                            db.SaveChanges();
+                            var ListeEt = db.Etudiants.ToList();
+                                    return View("GestionEtudiant", ListeEt);
+                                }
+                                else
+                                {
+                                    return View();
+                                }
+            }
+        }
+
     }
 }
