@@ -19,7 +19,5 @@ namespace prjWebCsHoraireScolaire.Models
         public string HeureDebut { get; set; }
         public string HeureFin { get; set; }
         public Nullable<int> Professeur { get; set; }
-    
-        public virtual Professeur Professeur1 { get; set; }
     }
 }

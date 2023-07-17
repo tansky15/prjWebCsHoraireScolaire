@@ -18,7 +18,5 @@ namespace prjWebCsHoraireScolaire.Models
         public Nullable<int> Etudiant { get; set; }
         public Nullable<double> Notes { get; set; }
         public Nullable<int> Cours { get; set; }
-    
-        public virtual Etudiant Etudiant1 { get; set; }
     }
 }

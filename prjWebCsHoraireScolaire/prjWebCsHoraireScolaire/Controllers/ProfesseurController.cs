@@ -19,7 +19,7 @@ namespace prjWebCsHoraireScolaire.Controllers
         [HttpPost]
         public ActionResult AutherizeProf(prjWebCsHoraireScolaire.Models.Entities.Prof userModel)
         {
-            using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new prjWebCsHoraireScolaire.Models.HoraireScolaireEntities())
+            using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities())
             {
 
                 var userDetails = db.Professeurs.Where(x => x.Email == userModel.Email && x.mdp == userModel.mdp).FirstOrDefault();
@@ -48,7 +48,7 @@ namespace prjWebCsHoraireScolaire.Controllers
         
         public ActionResult Dashboard()
         {
-            using (Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            using (Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
             {
                 int ProId = Convert.ToInt32(Session["ProfId"]);
                 var monhoraire = db.Horaires.ToList();

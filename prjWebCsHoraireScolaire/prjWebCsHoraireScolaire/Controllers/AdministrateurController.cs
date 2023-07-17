@@ -18,7 +18,7 @@ namespace prjWebCsHoraireScolaire.Controllers
         [HttpPost]
         public ActionResult AutherizeAdmin(prjWebCsHoraireScolaire.Models.Entities.Admin userModel)
         {
-            using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new prjWebCsHoraireScolaire.Models.HoraireScolaireEntities())
+            using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities())
             {
                 var userDetails = db.Administrateurs.Where(x => x.Email == userModel.Email && x.mdp == userModel.mdp).FirstOrDefault();
                 //On verifie si l'utilisateur existe
@@ -44,7 +44,7 @@ namespace prjWebCsHoraireScolaire.Controllers
         [HttpGet]
         public ActionResult ListeCours()
         {
-            using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
             {
                 var ListeCours = db.Cours.ToList();
                 return View(ListeCours);
@@ -54,7 +54,7 @@ namespace prjWebCsHoraireScolaire.Controllers
         [HttpPost]
         public ActionResult CreateCours(prjWebCsHoraireScolaire.Models.Entities.ModCours modCours)
         {
-            using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
             {
                 Models.Cour newCours = new Models.Cour
                 {
@@ -74,7 +74,7 @@ namespace prjWebCsHoraireScolaire.Controllers
         [HttpGet]
         public ActionResult GestionProfs(prjWebCsHoraireScolaire.Models.Professeur modProf)
         {
-            using(prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            using(prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
             {
                 var liste_des_profs = db.Professeurs.ToList();
                 return View(liste_des_profs);
@@ -86,7 +86,7 @@ namespace prjWebCsHoraireScolaire.Controllers
         {
             if(modProf.Nom != null)
             {
-                using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+                using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
                 {
                     Models.Professeur newProf = new Models.Professeur
                     {
@@ -115,7 +115,7 @@ namespace prjWebCsHoraireScolaire.Controllers
        
         public ActionResult EffacerProfesseur()
         {
-            using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
             {
                 if (Url.RequestContext.RouteData.Values["id"] != null)
                 {
@@ -136,7 +136,7 @@ namespace prjWebCsHoraireScolaire.Controllers
         [HttpGet]
         public ActionResult GestionEtudiant()
         {
-            using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
             {
                 var liste_des_etudiant = db.Etudiants.ToList();
                 return View(liste_des_etudiant);
@@ -145,7 +145,7 @@ namespace prjWebCsHoraireScolaire.Controllers
 
         public ActionResult EffacerEtudiant()
         {
-            using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+            using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
             {
                 if (Url.RequestContext.RouteData.Values["id"] != null)
                 {
@@ -172,7 +172,7 @@ namespace prjWebCsHoraireScolaire.Controllers
 
         public ActionResult AjouterEtudiant(prjWebCsHoraireScolaire.Models.Etudiant modEtudiant)
         {
-                using (prjWebCsHoraireScolaire.Models.HoraireScolaireEntities db = new Models.HoraireScolaireEntities())
+                using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
                 {
 
                         if (modEtudiant.Nom != null)

@@ -14,19 +14,10 @@ namespace prjWebCsHoraireScolaire.Models
     
     public partial class Etudiant
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Etudiant()
-        {
-            this.Notes = new HashSet<Note>();
-        }
-    
         public int EtudiantID { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Email { get; set; }
         public string Mdp { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Note> Notes { get; set; }
     }
 }

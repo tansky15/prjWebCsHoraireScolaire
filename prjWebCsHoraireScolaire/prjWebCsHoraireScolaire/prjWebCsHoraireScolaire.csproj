@@ -136,40 +136,40 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Administrateur.cs">
-      <DependentUpon>modHoraireScolaire.tt</DependentUpon>
+      <DependentUpon>ModelHoraireScolaire.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cour.cs">
-      <DependentUpon>modHoraireScolaire.tt</DependentUpon>
+      <DependentUpon>ModelHoraireScolaire.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\Admin.cs" />
     <Compile Include="Models\Entities\ModCours.cs" />
     <Compile Include="Models\Entities\Prof.cs" />
     <Compile Include="Models\Etudiant.cs">
-      <DependentUpon>modHoraireScolaire.tt</DependentUpon>
+      <DependentUpon>ModelHoraireScolaire.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Horaire.cs">
-      <DependentUpon>modHoraireScolaire.tt</DependentUpon>
+      <DependentUpon>ModelHoraireScolaire.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\modHoraireScolaire.Context.cs">
+    <Compile Include="Models\ModelHoraireScolaire.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>modHoraireScolaire.Context.tt</DependentUpon>
+      <DependentUpon>ModelHoraireScolaire.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\modHoraireScolaire.cs">
+    <Compile Include="Models\ModelHoraireScolaire.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>modHoraireScolaire.tt</DependentUpon>
+      <DependentUpon>ModelHoraireScolaire.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\modHoraireScolaire.Designer.cs">
+    <Compile Include="Models\ModelHoraireScolaire.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>modHoraireScolaire.edmx</DependentUpon>
+      <DependentUpon>ModelHoraireScolaire.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Note.cs">
-      <DependentUpon>modHoraireScolaire.tt</DependentUpon>
+      <DependentUpon>ModelHoraireScolaire.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Professeur.cs">
-      <DependentUpon>modHoraireScolaire.tt</DependentUpon>
+      <DependentUpon>ModelHoraireScolaire.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -182,25 +182,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\modHoraireScolaire.Context.tt">
+    <Content Include="Models\ModelHoraireScolaire.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>modHoraireScolaire.edmx</DependentUpon>
-      <LastGenOutput>modHoraireScolaire.Context.cs</LastGenOutput>
+      <DependentUpon>ModelHoraireScolaire.edmx</DependentUpon>
+      <LastGenOutput>ModelHoraireScolaire.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\modHoraireScolaire.tt">
+    <Content Include="Models\ModelHoraireScolaire.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>modHoraireScolaire.edmx</DependentUpon>
-      <LastGenOutput>modHoraireScolaire.cs</LastGenOutput>
+      <DependentUpon>ModelHoraireScolaire.edmx</DependentUpon>
+      <LastGenOutput>ModelHoraireScolaire.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\modHoraireScolaire.edmx">
+    <EntityDeploy Include="Models\ModelHoraireScolaire.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>modHoraireScolaire.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelHoraireScolaire.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\modHoraireScolaire.edmx.diagram">
-      <DependentUpon>modHoraireScolaire.edmx</DependentUpon>
+    <Content Include="Models\ModelHoraireScolaire.edmx.diagram">
+      <DependentUpon>ModelHoraireScolaire.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

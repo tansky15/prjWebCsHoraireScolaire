@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_a9c67b_horairescolaireModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administrateurs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nchar" MaxLength="255" />
+          <Property Name="Prenom" Type="nchar" MaxLength="255" />
+          <Property Name="Sexe" Type="nchar" MaxLength="1" />
+          <Property Name="Email" Type="nchar" MaxLength="255" />
+          <Property Name="mdp" Type="nchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Cours">
+          <Key>
+            <PropertyRef Name="CoursID" />
+          </Key>
+          <Property Name="CoursID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titre" Type="nchar" MaxLength="255" />
+          <Property Name="Description" Type="nchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Etudiants">
+          <Key>
+            <PropertyRef Name="EtudiantID" />
+          </Key>
+          <Property Name="EtudiantID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nchar" MaxLength="255" />
+          <Property Name="Prenom" Type="nchar" MaxLength="255" />
+          <Property Name="Email" Type="nchar" MaxLength="255" />
+          <Property Name="Mdp" Type="nchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Horaires">
+          <Key>
+            <PropertyRef Name="HoraireID" />
+          </Key>
+          <Property Name="HoraireID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="HeureDebut" Type="nchar" MaxLength="10" />
+          <Property Name="HeureFin" Type="nchar" MaxLength="10" />
+          <Property Name="Professeur" Type="int" />
+        </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="NotesID" />
+          </Key>
+          <Property Name="NotesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Etudiant" Type="int" />
+          <Property Name="Notes" Type="float" />
+          <Property Name="Cours" Type="int" />
+        </EntityType>
+        <EntityType Name="Professeurs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nchar" MaxLength="255" />
+          <Property Name="Prenom" Type="nchar" MaxLength="255" />
+          <Property Name="Sexe" Type="nchar" MaxLength="1" />
+          <Property Name="Email" Type="nchar" MaxLength="255" />
+          <Property Name="mdp" Type="nchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="db_a9c67b_horairescolaireModelStoreContainer">
+          <EntitySet Name="Administrateurs" EntityType="Self.Administrateurs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cours" EntityType="Self.Cours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Etudiants" EntityType="Self.Etudiants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Horaires" EntityType="Self.Horaires" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Professeurs" EntityType="Self.Professeurs" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_a9c67b_horairescolaireModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Administrateur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Sexe" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="mdp" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Cour">
+          <Key>
+            <PropertyRef Name="CoursID" />
+          </Key>
+          <Property Name="CoursID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titre" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Etudiant">
+          <Key>
+            <PropertyRef Name="EtudiantID" />
+          </Key>
+          <Property Name="EtudiantID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Mdp" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Horaire">
+          <Key>
+            <PropertyRef Name="HoraireID" />
+          </Key>
+          <Property Name="HoraireID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="HeureDebut" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="HeureFin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Professeur" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="NotesID" />
+          </Key>
+          <Property Name="NotesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Etudiant" Type="Int32" />
+          <Property Name="Notes" Type="Double" />
+          <Property Name="Cours" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Professeur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Prenom" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Sexe" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="mdp" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="db_a9c67b_horairescolaireEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Administrateurs" EntityType="Self.Administrateur" />
+          <EntitySet Name="Cours" EntityType="Self.Cour" />
+          <EntitySet Name="Etudiants" EntityType="Self.Etudiant" />
+          <EntitySet Name="Horaires" EntityType="Self.Horaire" />
+          <EntitySet Name="Notes" EntityType="Self.Note" />
+          <EntitySet Name="Professeurs" EntityType="Self.Professeur" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_a9c67b_horairescolaireModelStoreContainer" CdmEntityContainer="db_a9c67b_horairescolaireEntities">
+          <EntitySetMapping Name="Administrateurs">
+            <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Administrateur">
+              <MappingFragment StoreEntitySet="Administrateurs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="mdp" ColumnName="mdp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cours">
+            <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Cour">
+              <MappingFragment StoreEntitySet="Cours">
+                <ScalarProperty Name="CoursID" ColumnName="CoursID" />
+                <ScalarProperty Name="Titre" ColumnName="Titre" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Etudiants">
+            <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Etudiant">
+              <MappingFragment StoreEntitySet="Etudiants">
+                <ScalarProperty Name="EtudiantID" ColumnName="EtudiantID" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mdp" ColumnName="Mdp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Horaires">
+            <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Horaire">
+              <MappingFragment StoreEntitySet="Horaires">
+                <ScalarProperty Name="HoraireID" ColumnName="HoraireID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="HeureDebut" ColumnName="HeureDebut" />
+                <ScalarProperty Name="HeureFin" ColumnName="HeureFin" />
+                <ScalarProperty Name="Professeur" ColumnName="Professeur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notes">
+            <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Note">
+              <MappingFragment StoreEntitySet="Notes">
+                <ScalarProperty Name="NotesID" ColumnName="NotesID" />
+                <ScalarProperty Name="Etudiant" ColumnName="Etudiant" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Cours" ColumnName="Cours" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Professeurs">
+            <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Professeur">
+              <MappingFragment StoreEntitySet="Professeurs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="mdp" ColumnName="mdp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

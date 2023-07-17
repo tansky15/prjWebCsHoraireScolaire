@@ -14,20 +14,11 @@ namespace prjWebCsHoraireScolaire.Models
     
     public partial class Professeur
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Professeur()
-        {
-            this.Horaires = new HashSet<Horaire>();
-        }
-    
         public int Id { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Sexe { get; set; }
         public string Email { get; set; }
         public string mdp { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Horaire> Horaires { get; set; }
     }
 }
