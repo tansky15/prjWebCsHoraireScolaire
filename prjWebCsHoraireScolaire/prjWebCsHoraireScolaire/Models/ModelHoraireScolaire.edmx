@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="db_a9c67b_horairescolaireModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="db_a9c67b_horairescolaireModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administrateurs">
           <Key>
             <PropertyRef Name="Id" />
@@ -38,11 +38,12 @@
           <Key>
             <PropertyRef Name="HoraireID" />
           </Key>
-          <Property Name="HoraireID" Type="int" Nullable="false" />
           <Property Name="Date" Type="date" />
           <Property Name="HeureDebut" Type="nchar" MaxLength="10" />
           <Property Name="HeureFin" Type="nchar" MaxLength="10" />
           <Property Name="Professeur" Type="int" />
+          <Property Name="HoraireID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Classe" Type="int" />
         </EntityType>
         <EntityType Name="Notes">
           <Key>
@@ -72,8 +73,7 @@
           <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Professeurs" EntityType="Self.Professeurs" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="db_a9c67b_horairescolaireModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -115,6 +115,7 @@
           <Property Name="HeureDebut" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="HeureFin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Professeur" Type="Int32" />
+          <Property Name="Classe" Type="Int32" />
         </EntityType>
         <EntityType Name="Note">
           <Key>
@@ -185,6 +186,7 @@
           <EntitySetMapping Name="Horaires">
             <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Horaire">
               <MappingFragment StoreEntitySet="Horaires">
+                <ScalarProperty Name="Classe" ColumnName="Classe" />
                 <ScalarProperty Name="HoraireID" ColumnName="HoraireID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="HeureDebut" ColumnName="HeureDebut" />

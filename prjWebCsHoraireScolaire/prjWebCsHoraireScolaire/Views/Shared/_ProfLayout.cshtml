@@ -21,14 +21,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Acceuil", "Dashboard", "Professeur")</li>
-
-                    <li>@Html.ActionLink("Gestion des notes", "AddNotes", "Professeur")</li>
-
                     <li>@Html.ActionLink("Horaire de travail", "MonHoraire", "Professeur")</li>
-
-                    <li>@Html.ActionLink("Redirer un rapport", "MonHoraire", "Professeur")</li>
-
-                </ul>
+                    <li>@Html.ActionLink("Déconnexion", "Logout", "Professeur")</li>
+</ul>
             </div>
         </div>
     </div>
@@ -39,6 +34,9 @@
             <p>&copy; @DateTime.Now.Year - Institut Teccart</p>
         </footer>
     </div>
+
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

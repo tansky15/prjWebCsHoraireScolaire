@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\tansk\source\repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\Models\ModelHoraireScolaire.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\tansk\Desktop\Github\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\Models\ModelHoraireScolaire.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

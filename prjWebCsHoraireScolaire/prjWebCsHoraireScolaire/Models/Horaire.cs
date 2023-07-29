@@ -11,13 +11,17 @@ namespace prjWebCsHoraireScolaire.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Horaire
     {
         public int HoraireID { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public Nullable<System.DateTime> Date { get; set; }
         public string HeureDebut { get; set; }
         public string HeureFin { get; set; }
         public Nullable<int> Professeur { get; set; }
+        public Nullable<int> Classe { get; set; }
     }
 }
