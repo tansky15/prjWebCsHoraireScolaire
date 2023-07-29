@@ -9,8 +9,6 @@ namespace prjWebCsHoraireScolaire.Controllers
     public class ProfesseurController : Controller
     {
 
-
-        //public static prjWebCsHoraireScolaire.Models.Horaire horaireModel;
         // GET: Professeur
         public ActionResult Index()
         {
@@ -31,35 +29,51 @@ namespace prjWebCsHoraireScolaire.Controllers
                 }
                 else
                 {
-                    //string SerializeUser = JsonConvert.SerializeObject(userDetails);
-                    //Session["UserJson"] = SerializeUser;
-
-                    //using (db_iisprotect db1 = new db_iisprotect())
-                    //{
-                    //    var ListInstitutions = db1.institutions.ToList();
-                    //    return View("dashboard", ListInstitutions);
-                    //}
-                    Session["ProfId"] = userModel.Id;
+                    Session["ProfId"] = userDetails.Id;
                     return View("dashboard");
                 }
             }
         }
-
         
         public ActionResult Dashboard()
         {
-            using (Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
-            {
-                int ProId = Convert.ToInt32(Session["ProfId"]);
-                var monhoraire = db.Horaires.ToList();
-                return View(monhoraire);
-            }
+            return View();
            
         }
 
         public ActionResult AddNotes()
         {
             return View();
+        }
+        public ActionResult MonHoraire()
+        {
+            int ProfId =  Convert.ToInt32(Session["ProfId"].ToString());
+
+            using (Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
+            {
+                var ListHoraire = db.Horaires.Where(s => s.Professeur == ProfId).ToList();
+                return View(ListHoraire);
+            }
+        }
+
+        public ActionResult CreerHoraire()
+        {
+            return View();
+        }
+        public ActionResult EfacerHoraire()
+        {
+            int HoraireID = Convert.ToInt32(Url.RequestContext.RouteData.Values["id"]);
+            int ProfId = Convert.ToInt32(Session["ProfId"].ToString());
+
+            using (Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
+            {
+                Models.Horaire HoraireAEfacer = db.Horaires.Where(s => s.HoraireID == HoraireID).FirstOrDefault();
+                db.Horaires.Remove(HoraireAEfacer);
+                db.SaveChanges();
+
+                var ListHoraire = db.Horaires.Where(s => s.Professeur == ProfId).ToList();
+                return View("MonHoraire", ListHoraire);
+            }
         }
     }
 }

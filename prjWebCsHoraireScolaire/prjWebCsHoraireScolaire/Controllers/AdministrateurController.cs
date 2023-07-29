@@ -170,6 +170,12 @@ namespace prjWebCsHoraireScolaire.Controllers
             }
         }
 
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return View("Index");
+        }
+
         public ActionResult AjouterEtudiant(prjWebCsHoraireScolaire.Models.Etudiant modEtudiant)
         {
                 using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())

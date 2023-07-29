@@ -158,8 +158,8 @@ C:\Users\Marc Larochelle\Source\Repos\tansky15\prjWebCsHoraireScolaire\prjWebCsH
 C:\Users\Marc Larochelle\Source\Repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\Newtonsoft.Json.xml
 C:\Users\Marc Larochelle\Source\Repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\Antlr3.Runtime.pdb
 C:\Users\Marc Larochelle\Source\Repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Marc Larochelle\Source\Repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.csproj.AssemblyReference.cache
 C:\Users\Marc Larochelle\Source\Repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.csproj.CoreCompileInputs.cache
 C:\Users\Marc Larochelle\Source\Repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.csproj.CopyComplete
 C:\Users\Marc Larochelle\Source\Repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.dll
 C:\Users\Marc Larochelle\Source\Repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.pdb
+C:\Users\Marc Larochelle\Source\Repos\tansky15\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\prjWebCsHoraireScolaire\obj\Debug\prjWebCsHoraireScolaire.csproj.AssemblyReference.cache

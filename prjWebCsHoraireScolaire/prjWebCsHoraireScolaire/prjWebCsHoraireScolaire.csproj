@@ -227,7 +227,6 @@
     <Content Include="Views\Acceuil\Index.cshtml" />
     <Content Include="Views\Professeur\Index.cshtml" />
     <Content Include="Views\Shared\_ProfLayout.cshtml" />
-    <Content Include="Views\Professeur\Dashboard.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Administrateur\CreateCours.cshtml" />
     <Content Include="Views\Administrateur\Index.cshtml" />
@@ -236,6 +235,9 @@
     <Content Include="Views\Administrateur\AjouterProfesseur.cshtml" />
     <Content Include="Views\Administrateur\GestionEtudiant.cshtml" />
     <Content Include="Views\Administrateur\AjouterEtudiant.cshtml" />
+    <Content Include="Views\Professeur\Dashboard.cshtml" />
+    <Content Include="Views\Professeur\MonHoraire.cshtml" />
+    <Content Include="Views\Professeur\CreerHoraire.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
