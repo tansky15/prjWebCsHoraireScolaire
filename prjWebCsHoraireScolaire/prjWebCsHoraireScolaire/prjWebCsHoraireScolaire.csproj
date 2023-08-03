@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="Models\Entities\Admin.cs" />
     <Compile Include="Models\Entities\ModCours.cs" />
+    <Compile Include="Models\Entities\ModelViewHoraireProfesseur.cs" />
     <Compile Include="Models\Entities\Prof.cs" />
     <Compile Include="Models\Etudiant.cs">
       <DependentUpon>ModelHoraireScolaire.tt</DependentUpon>
@@ -239,6 +240,7 @@
     <Content Include="Views\Professeur\Dashboard.cshtml" />
     <Content Include="Views\Professeur\MonHoraire.cshtml" />
     <Content Include="Views\Professeur\CreerHoraire.cshtml" />
+    <Content Include="Views\Administrateur\ListeAssignation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -113,6 +113,14 @@ namespace prjWebCsHoraireScolaire.Controllers
           
         }
        
+        public ActionResult ListeAssignation()
+        {
+            using (Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
+            {
+                var ListHoraire = db.Horaires.ToList();
+                return View(ListHoraire);
+            }
+        }
         public ActionResult EffacerProfesseur()
         {
             using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
@@ -202,5 +210,35 @@ namespace prjWebCsHoraireScolaire.Controllers
             }
         }
 
+        public ActionResult DeleteSchedule()
+        {
+            int HoraireID = Convert.ToInt32(Url.RequestContext.RouteData.Values["id"]);
+
+            using (Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
+            {
+                Models.Horaire HoraireAEfacer = db.Horaires.Where(s => s.HoraireID == HoraireID).FirstOrDefault();
+                db.Horaires.Remove(HoraireAEfacer);
+                db.SaveChanges();
+
+                var ListHoraire = db.Horaires.ToList();
+                return View("ListeAssignation", ListHoraire);
+            }
+        }
+
+
+        public ActionResult AcceptSchedule()
+        {
+            using (Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
+            {
+                int HoraireID = Convert.ToInt32(Url.RequestContext.RouteData.Values["id"]);
+                prjWebCsHoraireScolaire.Models.Horaire Schedule = new Models.Horaire();
+                Schedule = db.Horaires.Where(u => u.HoraireID == HoraireID).First();
+                Schedule.statut = "Accépté";
+                db.SaveChanges();
+                var ListHoraire = db.Horaires.ToList();
+                return View("ListeAssignation", ListHoraire);
+            }
+
+        }
     }
 }

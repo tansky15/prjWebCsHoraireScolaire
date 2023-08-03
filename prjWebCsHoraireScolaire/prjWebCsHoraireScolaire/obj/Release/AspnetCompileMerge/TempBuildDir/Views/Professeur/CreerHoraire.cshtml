@@ -1,0 +1,75 @@
+﻿@model prjWebCsHoraireScolaire.Models.Horaire
+
+@{
+    ViewBag.Title = "Creer un Horaire";
+    Layout = "~/Views/Shared/_ProfLayout.cshtml";
+}
+<style>
+    .hide {
+        display: none;
+    }
+</style>
+
+
+<h2>CreerHoraire</h2>
+@if (ViewBag.ErreurMessage != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErreurMessage
+    </div>
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Horaire</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @* Utilisez une classe CSS pour identifier le champ Date et l'initialiser en tant que date picker *@
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @type = "date", @class = "form-control datepicker" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HeureDebut, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HeureDebut, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HeureDebut, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HeureFin, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HeureFin, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HeureFin, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Classe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Classe, new { htmlAttributes = new { @class = "form-control", Value = 1 } })
+                @Html.ValidationMessageFor(model => model.Classe, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Retourner a la liste", "MonHoraire")
+</div>

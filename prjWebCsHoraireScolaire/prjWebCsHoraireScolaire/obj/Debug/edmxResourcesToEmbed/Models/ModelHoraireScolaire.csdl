@@ -39,6 +39,7 @@
     <Property Name="HeureFin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Professeur" Type="Int32" />
     <Property Name="Classe" Type="Int32" />
+    <Property Name="statut" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Note">
     <Key>

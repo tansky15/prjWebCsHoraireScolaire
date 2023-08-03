@@ -1,0 +1,50 @@
+﻿@model IEnumerable<prjWebCsHoraireScolaire.Models.Horaire>
+
+@{
+    ViewBag.Title = "MonHoraire";
+    Layout = "~/Views/Shared/_ProfLayout.cshtml";
+}
+
+<h2>MonHoraire</h2>
+
+<p>
+    @Html.ActionLink("Creer un horaire", "CreerHoraire")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeureDebut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeureFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Classe)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HeureDebut) h
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HeureFin) h
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Classe)
+    </td>
+    <td>
+        @Html.ActionLink("Effacer", "EfacerHoraire", new { id = item.HoraireID })
+    </td>
+</tr>
+}
+
+</table>

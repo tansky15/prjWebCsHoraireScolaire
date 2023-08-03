@@ -33,11 +33,12 @@
     <Key>
       <PropertyRef Name="HoraireID" />
     </Key>
-    <Property Name="HoraireID" Type="int" Nullable="false" />
     <Property Name="Date" Type="date" />
     <Property Name="HeureDebut" Type="nchar" MaxLength="10" />
     <Property Name="HeureFin" Type="nchar" MaxLength="10" />
     <Property Name="Professeur" Type="int" />
+    <Property Name="HoraireID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Classe" Type="int" />
   </EntityType>
   <EntityType Name="Notes">
     <Key>

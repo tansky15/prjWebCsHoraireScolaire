@@ -1,0 +1,46 @@
+﻿@model IEnumerable<prjWebCsHoraireScolaire.Models.Etudiant>
+
+@{
+    ViewBag.Title = "GestionEtudiant";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Gestion des etudiants</h2>
+
+<p>
+    @Html.ActionLink("Nouveau etudiant", "AjouterEtudiant")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prenom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prenom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Effacer", "EffacerEtudiant", new { id=item.EtudiantID })
+        </td>
+    </tr>
+}
+
+</table>

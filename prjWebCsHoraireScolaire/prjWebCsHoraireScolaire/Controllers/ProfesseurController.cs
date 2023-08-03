@@ -33,6 +33,7 @@ namespace prjWebCsHoraireScolaire.Controllers
                 {
                     Session["ProfId"] = userDetails.Id;
                     ViewBag.ProfID = userDetails.Id;
+                    Session["Nom"] = userDetails.Nom + userDetails.Prenom;
                     return View("dashboard");
                 }
             }
