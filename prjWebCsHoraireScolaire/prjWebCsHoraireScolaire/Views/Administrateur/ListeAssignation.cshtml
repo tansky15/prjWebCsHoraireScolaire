@@ -1,4 +1,4 @@
-﻿@model IEnumerable<prjWebCsHoraireScolaire.Models.Entities.ModelViewHoraireProfesseur>
+﻿@model IEnumerable<prjWebCsHoraireScolaire.Models.Horaire>
 
 @{
     ViewBag.Title = "Assignation Horaire";
@@ -42,7 +42,7 @@
                 @Html.DisplayFor(modelItem => item.HeureFin)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProfesseurNom)
+                @Html.DisplayFor(modelItem => item.Professeur)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Classe)
