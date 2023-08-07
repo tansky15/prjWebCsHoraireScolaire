@@ -45,6 +45,7 @@
           <Property Name="HoraireID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Classe" Type="int" />
           <Property Name="statut" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProfesseurNom" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Notes">
           <Key>
@@ -118,6 +119,7 @@
           <Property Name="Professeur" Type="Int32" />
           <Property Name="Classe" Type="Int32" />
           <Property Name="statut" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProfesseurNom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Note">
           <Key>
@@ -188,6 +190,7 @@
           <EntitySetMapping Name="Horaires">
             <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Horaire">
               <MappingFragment StoreEntitySet="Horaires">
+                <ScalarProperty Name="ProfesseurNom" ColumnName="ProfesseurNom" />
                 <ScalarProperty Name="statut" ColumnName="statut" />
                 <ScalarProperty Name="Classe" ColumnName="Classe" />
                 <ScalarProperty Name="HoraireID" ColumnName="HoraireID" />

@@ -225,6 +225,10 @@ namespace prjWebCsHoraireScolaire.Controllers
             }
         }
 
+        public string TrouverNomProfesseurAvecID(int ProfID)
+        {
+            return "Marc";
+        }
 
         public ActionResult AcceptSchedule()
         {

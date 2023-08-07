@@ -9,8 +9,8 @@ namespace prjWebCsHoraireScolaire.Models.Entities
     {
         public int HoraireID { get; set; }
         public DateTime Date { get; set; }
-        public TimeSpan HeureDebut { get; set; }
-        public TimeSpan HeureFin { get; set; }
+        public int HeureDebut { get; set; }
+        public int HeureFin { get; set; }
         public int Professeur { get; set; }
         public string ProfesseurNom { get; set; }
         public string Classe { get; set; }

@@ -40,6 +40,7 @@
     <Property Name="Professeur" Type="Int32" />
     <Property Name="Classe" Type="Int32" />
     <Property Name="statut" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProfesseurNom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Note">
     <Key>

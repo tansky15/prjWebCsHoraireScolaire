@@ -21,6 +21,6 @@ namespace prjWebCsHoraireScolaire.Models
         public Nullable<int> Professeur { get; set; }
         public Nullable<int> Classe { get; set; }
         public string statut { get; set; }
-       
+        public string ProfesseurNom { get; set; }
     }
 }

@@ -31,37 +31,56 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HeureDebut)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HeureFin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Professeur)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Classe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.statut)
-            </td>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HeureDebut)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HeureFin)
+    </td>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.ProfesseurNom)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Classe)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.statut)
+    </td>
 
-            @if (item.statut == "en attente")
-            {
-                <td>
-                    @Html.ActionLink("Accepté", "AcceptSchedule", new { id = item.HoraireID }, new { @class = "btn btn-success" })
-                </td>
-                <td>
-                    @Html.ActionLink("Efacé", "DeleteSchedule", new { id = item.HoraireID }, new { @class = "btn btn-danger" })
-                </td>
+    @if (item.statut == "en attente")
+    {
+        <td>
+            @Html.ActionLink("Accepté", "AcceptSchedule", new { id = item.HoraireID }, new { @class = "btn btn-success" })
+        </td>
+        <td>
+            @Html.ActionLink("Efacé", "DeleteSchedule", new { id = item.HoraireID }, new { @class = "btn btn-danger" })
+        </td>
 
-            }
-        </tr>
+    }
+</tr>
     }
 
 </table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function TrouverNomProfesseurAvecID(professeurID) {
+        $.ajax({
+            url:  '@Url.Action("TrouverNomProfesseurAvecID", "Administrateur")',
+            method: "GET",
+            data: { ID: professeurID },
+            success: function (nomProfesseur) {
+                return nomProfesseur;
+            },
+            error: function () {
+                return "Erreur lors de la récupération du nom du professeur.";
+            }
+        });
+    }
+</script>
+
