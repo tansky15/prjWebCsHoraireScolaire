@@ -31,5 +31,6 @@ namespace prjWebCsHoraireScolaire.Models
         public virtual DbSet<Horaire> Horaires { get; set; }
         public virtual DbSet<Note> Notes { get; set; }
         public virtual DbSet<Professeur> Professeurs { get; set; }
+        public virtual DbSet<Document> Documents { get; set; }
     }
 }

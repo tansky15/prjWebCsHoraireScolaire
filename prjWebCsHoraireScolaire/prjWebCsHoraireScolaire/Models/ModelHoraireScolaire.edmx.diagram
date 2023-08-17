@@ -11,6 +11,7 @@
         <EntityTypeShape EntityType="db_a9c67b_horairescolaireModel.Horaire" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="db_a9c67b_horairescolaireModel.Note" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="db_a9c67b_horairescolaireModel.Professeur" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a9c67b_horairescolaireModel.Document" Width="1.5" PointX="5.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

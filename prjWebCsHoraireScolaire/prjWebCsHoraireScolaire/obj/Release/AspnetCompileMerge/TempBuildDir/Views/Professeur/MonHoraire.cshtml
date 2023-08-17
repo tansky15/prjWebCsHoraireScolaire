@@ -24,6 +24,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Classe)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statut)
+        </th>
         <th></th>
     </tr>
 
@@ -40,6 +43,9 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Classe)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.statut)
     </td>
     <td>
         @Html.ActionLink("Effacer", "EfacerHoraire", new { id = item.HoraireID })

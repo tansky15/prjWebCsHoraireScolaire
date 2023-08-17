@@ -39,6 +39,8 @@
     <Property Name="Professeur" Type="int" />
     <Property Name="HoraireID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Classe" Type="int" />
+    <Property Name="statut" Type="nvarchar" MaxLength="100" />
+    <Property Name="ProfesseurNom" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Notes">
     <Key>

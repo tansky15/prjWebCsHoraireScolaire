@@ -24,6 +24,16 @@
           <Property Name="Titre" Type="nchar" MaxLength="255" />
           <Property Name="Description" Type="nchar" MaxLength="255" />
         </EntityType>
+        <EntityType Name="Documents">
+          <Key>
+            <PropertyRef Name="DOCUMENT_ID" />
+          </Key>
+          <Property Name="DOCUMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TITRE" Type="nvarchar(max)" />
+          <Property Name="DATE_TIME_PUBLICATION" Type="nvarchar(max)" />
+          <Property Name="CHEMIN" Type="nvarchar(max)" />
+          <Property Name="UTILISATEUR" Type="int" />
+        </EntityType>
         <EntityType Name="Etudiants">
           <Key>
             <PropertyRef Name="EtudiantID" />
@@ -70,6 +80,7 @@
         <EntityContainer Name="db_a9c67b_horairescolaireModelStoreContainer">
           <EntitySet Name="Administrateurs" EntityType="Self.Administrateurs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cours" EntityType="Self.Cours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Etudiants" EntityType="Self.Etudiants" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Horaires" EntityType="Self.Horaires" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />
@@ -148,7 +159,18 @@
           <EntitySet Name="Horaires" EntityType="Self.Horaire" />
           <EntitySet Name="Notes" EntityType="Self.Note" />
           <EntitySet Name="Professeurs" EntityType="Self.Professeur" />
+          <EntitySet Name="Documents" EntityType="db_a9c67b_horairescolaireModel.Document" />
         </EntityContainer>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DOCUMENT_ID" />
+          </Key>
+          <Property Name="DOCUMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TITRE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_TIME_PUBLICATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CHEMIN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UTILISATEUR" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -220,6 +242,17 @@
                 <ScalarProperty Name="Sexe" ColumnName="Sexe" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="mdp" ColumnName="mdp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Document">
+              <MappingFragment StoreEntitySet="Documents">
+                <ScalarProperty Name="UTILISATEUR" ColumnName="UTILISATEUR" />
+                <ScalarProperty Name="CHEMIN" ColumnName="CHEMIN" />
+                <ScalarProperty Name="DATE_TIME_PUBLICATION" ColumnName="DATE_TIME_PUBLICATION" />
+                <ScalarProperty Name="TITRE" ColumnName="TITRE" />
+                <ScalarProperty Name="DOCUMENT_ID" ColumnName="DOCUMENT_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

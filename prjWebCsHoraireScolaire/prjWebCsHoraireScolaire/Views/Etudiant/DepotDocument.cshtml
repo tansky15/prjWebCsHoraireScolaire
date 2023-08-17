@@ -1,0 +1,30 @@
+﻿@model prjWebCsHoraireScolaire.Models.DocumentViewModel
+
+@{
+    ViewBag.Title = "Dépôt de Document";
+    Layout = "~/Views/Shared/_EtudiantLayout.cshtml";
+}
+<h2>Dépôt de Document</h2>
+
+@using (Html.BeginForm("DepotDocument", "Etudiant", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TITRE, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.TITRE, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TITRE, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label for="file">Sélectionnez un document PDF :</label>
+        <input type="file" name="file" id="file" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+}
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}

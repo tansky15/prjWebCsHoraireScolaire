@@ -121,6 +121,15 @@ namespace prjWebCsHoraireScolaire.Controllers
                 return View(ListHoraire);
             }
         }
+        public ActionResult ListeDocuments()
+        {
+            using (Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())
+            {
+                var ListeDocuments = db.Documents.ToList();
+                return View(ListeDocuments);
+            }
+        }
+
         public ActionResult EffacerProfesseur()
         {
             using (prjWebCsHoraireScolaire.Models.db_a9c67b_horairescolaireEntities db = new Models.db_a9c67b_horairescolaireEntities())

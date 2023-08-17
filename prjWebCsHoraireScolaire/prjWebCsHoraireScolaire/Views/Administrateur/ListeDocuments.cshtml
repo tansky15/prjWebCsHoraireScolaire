@@ -1,0 +1,53 @@
+﻿@model IEnumerable<prjWebCsHoraireScolaire.Models.Document>
+@{
+    ViewBag.Title = "ListeCours";
+    Layout = "~/Views/Shared/_EtudiantLayout.cshtml";
+}
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TITRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_TIME_PUBLICATION)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CHEMIN)*@
+            ACTION
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UTILISATEUR)
+        </th>
+        <th>
+            Status
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TITRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATE_TIME_PUBLICATION)
+            </td>
+            <td>
+                @*<iframe src=""></iframe>*@
+
+                <a target="_blank" href="/Documents/@Html.DisplayFor(modelItem => item.CHEMIN)"><i class="glyphicon glyphicon-eye-open" ></i>View</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UTILISATEUR)
+            </td>
+            <td>
+                <button class="btn btn-primary">Accepte</button>
+                <button class="btn btn-danger">Effacer</button>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -36,6 +36,8 @@
     <EntitySetMapping Name="Horaires">
       <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Horaire">
         <MappingFragment StoreEntitySet="Horaires">
+          <ScalarProperty Name="ProfesseurNom" ColumnName="ProfesseurNom" />
+          <ScalarProperty Name="statut" ColumnName="statut" />
           <ScalarProperty Name="Classe" ColumnName="Classe" />
           <ScalarProperty Name="HoraireID" ColumnName="HoraireID" />
           <ScalarProperty Name="Date" ColumnName="Date" />

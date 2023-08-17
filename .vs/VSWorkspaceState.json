@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\prjWebCsHoraireScolaire",
+    "\\prjWebCsHoraireScolaire\\prjWebCsHoraireScolaire",
+    "\\prjWebCsHoraireScolaire\\prjWebCsHoraireScolaire\\Controllers",
+    "\\prjWebCsHoraireScolaire\\prjWebCsHoraireScolaire\\Views",
+    "\\prjWebCsHoraireScolaire\\prjWebCsHoraireScolaire\\Views\\Administrateur"
   ],
-  "SelectedNode": "\\prjWebCsHoraireScolaire.sln",
+  "SelectedNode": "\\prjWebCsHoraireScolaire\\prjWebCsHoraireScolaire\\Controllers\\EtudiantController.cs",
   "PreviewInSolutionExplorer": false
 }

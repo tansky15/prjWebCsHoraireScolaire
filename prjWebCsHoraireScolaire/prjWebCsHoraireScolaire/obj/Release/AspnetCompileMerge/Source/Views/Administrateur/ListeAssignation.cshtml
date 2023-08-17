@@ -1,0 +1,86 @@
+﻿@model IEnumerable<prjWebCsHoraireScolaire.Models.Horaire>
+
+@{
+    ViewBag.Title = "Assignation Horaire";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeureDebut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeureFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Professeur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Classe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statut)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HeureDebut)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HeureFin)
+    </td>
+    
+    <td>
+        @Html.DisplayFor(modelItem => item.ProfesseurNom)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Classe)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.statut)
+    </td>
+
+    @if (item.statut == "en attente")
+    {
+        <td>
+            @Html.ActionLink("Accepté", "AcceptSchedule", new { id = item.HoraireID }, new { @class = "btn btn-success" })
+        </td>
+        <td>
+            @Html.ActionLink("Efacé", "DeleteSchedule", new { id = item.HoraireID }, new { @class = "btn btn-danger" })
+        </td>
+
+    }
+</tr>
+    }
+
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function TrouverNomProfesseurAvecID(professeurID) {
+        $.ajax({
+            url:  '@Url.Action("TrouverNomProfesseurAvecID", "Administrateur")',
+            method: "GET",
+            data: { ID: professeurID },
+            success: function (nomProfesseur) {
+                return nomProfesseur;
+            },
+            error: function () {
+                return "Erreur lors de la récupération du nom du professeur.";
+            }
+        });
+    }
+</script>
+

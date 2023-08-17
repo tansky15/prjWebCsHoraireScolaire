@@ -16,14 +16,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Horaire Scolaire", "Index", "Administrateur", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Horaire Scolaire", "CreateCours", "Administrateur", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Creation de cours", "CreateCours", "Administrateur")</li>
                     <li>@Html.ActionLink("Liste de Cours", "ListeCours", "Administrateur")</li>
                     <li>@Html.ActionLink("Assignation de cours", "ListeAssignation", "Administrateur")</li>
-                    <li>@Html.ActionLink("Gestion d'Horaire", "GestionHoraire", "Administrateur")</li>
+                    @*<li>@Html.ActionLink("Gestion d'Horaire", "GestionHoraire", "Administrateur")</li>*@
                     <li>@Html.ActionLink("Gestion des profs", "GestionProfs", "Administrateur")</li>
                     <li>@Html.ActionLink("Gestion des etudiants", "GestionEtudiant", "Administrateur")</li>
                     <li>@Html.ActionLink("Déconnexion", "Logout", "Administrateur")</li>

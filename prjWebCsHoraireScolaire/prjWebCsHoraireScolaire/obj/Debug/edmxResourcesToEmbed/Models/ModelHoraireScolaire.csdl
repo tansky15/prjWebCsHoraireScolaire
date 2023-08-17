@@ -69,5 +69,16 @@
     <EntitySet Name="Horaires" EntityType="Self.Horaire" />
     <EntitySet Name="Notes" EntityType="Self.Note" />
     <EntitySet Name="Professeurs" EntityType="Self.Professeur" />
+    <EntitySet Name="Documents" EntityType="db_a9c67b_horairescolaireModel.Document" />
   </EntityContainer>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DOCUMENT_ID" />
+    </Key>
+    <Property Name="DOCUMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITRE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_TIME_PUBLICATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CHEMIN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UTILISATEUR" Type="Int32" />
+  </EntityType>
 </Schema>

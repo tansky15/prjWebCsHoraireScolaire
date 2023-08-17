@@ -19,6 +19,16 @@
     <Property Name="Titre" Type="nchar" MaxLength="255" />
     <Property Name="Description" Type="nchar" MaxLength="255" />
   </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="DOCUMENT_ID" />
+    </Key>
+    <Property Name="DOCUMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TITRE" Type="nvarchar(max)" />
+    <Property Name="DATE_TIME_PUBLICATION" Type="nvarchar(max)" />
+    <Property Name="CHEMIN" Type="nvarchar(max)" />
+    <Property Name="UTILISATEUR" Type="int" />
+  </EntityType>
   <EntityType Name="Etudiants">
     <Key>
       <PropertyRef Name="EtudiantID" />
@@ -65,6 +75,7 @@
   <EntityContainer Name="db_a9c67b_horairescolaireModelStoreContainer">
     <EntitySet Name="Administrateurs" EntityType="Self.Administrateurs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cours" EntityType="Self.Cours" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Etudiants" EntityType="Self.Etudiants" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Horaires" EntityType="Self.Horaires" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Notes" EntityType="Self.Notes" Schema="dbo" store:Type="Tables" />

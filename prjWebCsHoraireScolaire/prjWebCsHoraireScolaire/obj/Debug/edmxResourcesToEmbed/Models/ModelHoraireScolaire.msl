@@ -69,5 +69,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="db_a9c67b_horairescolaireModel.Document">
+        <MappingFragment StoreEntitySet="Documents">
+          <ScalarProperty Name="UTILISATEUR" ColumnName="UTILISATEUR" />
+          <ScalarProperty Name="CHEMIN" ColumnName="CHEMIN" />
+          <ScalarProperty Name="DATE_TIME_PUBLICATION" ColumnName="DATE_TIME_PUBLICATION" />
+          <ScalarProperty Name="TITRE" ColumnName="TITRE" />
+          <ScalarProperty Name="DOCUMENT_ID" ColumnName="DOCUMENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
